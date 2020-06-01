@@ -27,7 +27,7 @@ if __name__ == '__main__':
     for x in range(1, len(v)+1):
         print(x, '. ', v[x-1])
 
-    choice = int(input())
+    choice = 1 #int(input())
     print('Selected', v[choice-1])
 
 
