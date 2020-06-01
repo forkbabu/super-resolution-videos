@@ -28,9 +28,9 @@ set_keep['_layers_name_list'] =[]
 set_keep['name_reuse'] = False
 
 try:  # For TF12 and later
-    TF_GRAPHKEYS_VARIABLES = tf.GraphKeys.GLOBAL_VARIABLES
+    TF_GRAPHKEYS_VARIABLES = tf.compat.v1.GraphKeys.GLOBAL_VARIABLES
 except:  # For TF11 and before
-    TF_GRAPHKEYS_VARIABLES = tf.GraphKeys.VARIABLES
+    TF_GRAPHKEYS_VARIABLES = tf.compat.v1.GraphKeys.VARIABLES
 
 ## Variable Operation
 def flatten_reshape(variable, name=''):
@@ -3467,7 +3467,7 @@ class PoolLayer(Layer):
         ksize=[1, 2, 2, 1],
         strides=[1, 2, 2, 1],
         padding='SAME',
-        pool = tf.nn.max_pool,
+        pool = tf.nn.max_pool2d,
         name ='pool_layer',
     ):
         Layer.__init__(self, name=name)
